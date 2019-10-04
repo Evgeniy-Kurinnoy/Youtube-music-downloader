@@ -19,10 +19,16 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
+        <service
+                android:name=".downloadService.DownloadService"
+                android:enabled="true"
+                android:exported="false">
+        </service>
 
-        <activity android:name=".musicDownload.MusicDownloadActivity"
-                  android:launchMode="singleTop"
-                  android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity
+                android:name=".musicDownload.MusicDownloadActivity"
+                android:launchMode="singleTop"
+                android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -49,7 +55,6 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-
         <activity android:name=".BaseActivity"/>
         <activity android:name=".SettingsActivity"/>
 
@@ -60,16 +65,14 @@
                 android:grantUriPermissions="true">
             <meta-data
                     android:name="android.support.FILE_PROVIDER_PATHS"
-                    android:resource="@xml/nnf_provider_paths" />
+                    android:resource="@xml/nnf_provider_paths"/>
         </provider>
 
         <activity
                 android:name="com.nononsenseapps.filepicker.FilePickerActivity"
                 android:label="@string/app_name"
                 android:theme="@style/FilePickerTheme">
-
         </activity>
-
     </application>
 
 </manifest>

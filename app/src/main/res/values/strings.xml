@@ -23,4 +23,15 @@
     <string name="wait_for_download">Wait for the current song to load</string>
     <string name="cancel">Cancel</string>
     <string name="back">Back</string>
+    <string name="download_song">Download music</string>
+    <string name="download_complete">Download complete</string>
+    <string name="download_notifications">Download notifications</string>
+    <string name="permission_denied_title">Permission denied</string>
+    <string name="permission_denied_message">To download music, you need permission to read and write to external storage
+    </string>
+    <string name="forbidden_title">Could not load song</string>
+    <string name="forbidden_message">Unfortunately, it’s not possible to download a song from this link, try another video
+    </string>
+    <string name="error_title">An error has occurred</string>
+    <string name="ok">OK</string>
 </resources>

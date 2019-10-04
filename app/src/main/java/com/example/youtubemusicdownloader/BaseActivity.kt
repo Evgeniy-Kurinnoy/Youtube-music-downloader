@@ -28,19 +28,23 @@ open class BaseActivity: AppCompatActivity() {
         }
     }
 
-    fun checkPermission(permission: String): Single<Boolean> {
-        requestedPermission = permission
+    fun checkPermissions(permissions: List<String>): Single<Boolean> {
+       // requestedPermission = permission
         permissionSubject = SingleSubject.create()
-        if (checkCallingOrSelfPermission(permission) == PackageManager.PERMISSION_GRANTED) {
+        val notGrantedPermissions = permissions.filter {
+            checkCallingOrSelfPermission(it) != PackageManager.PERMISSION_GRANTED
+        }
+
+        if (notGrantedPermissions.isEmpty()) {
             return Single.just(true)
         } else {
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE), 1)
+            ActivityCompat.requestPermissions(this, notGrantedPermissions.toTypedArray(), 1)
         }
         return permissionSubject!!
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
-        val permission = requestedPermission ?: return
+       // val permission = requestedPermission ?: return
 
         if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             permissionSubject?.onSuccess(true)
@@ -49,4 +53,6 @@ open class BaseActivity: AppCompatActivity() {
         }
 
     }
+
+
 }

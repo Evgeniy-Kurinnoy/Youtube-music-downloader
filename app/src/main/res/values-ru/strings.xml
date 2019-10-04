@@ -23,4 +23,15 @@
     <string name="wait_for_download">Дождитесь загрузки текущей песни</string>
     <string name="cancel">Отмена</string>
     <string name="back">Назад</string>
+    <string name="download_song">Загрузка песни</string>
+    <string name="download_complete">Загрузка завершена</string>
+    <string name="download_notifications">Уведомления о загрузке</string>
+    <string name="permission_denied_title">Недостаточно прав</string>
+    <string name="permission_denied_message">Для загрузки музыки необходимо разрешение для записи на внешнее хранилище
+    </string>
+    <string name="forbidden_title">Не удалось загрузить трек</string>
+    <string name="forbidden_message">К сожалению невозможно загрузить трек по этой ссылке, попробуйте другой ролик
+    </string>
+    <string name="error_title">Произошла ошибка</string>
+    <string name="ok">Ок</string>
 </resources>
